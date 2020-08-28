@@ -19,7 +19,7 @@ DECLARE_CYCLE_STAT(TEXT("RuntimeMeshComponentSceneProxy - Draw Static Mesh Eleme
 DECLARE_CYCLE_STAT(TEXT("RuntimeMeshComponentSceneProxy - Get Dynamic Ray Tracing Instances"), STAT_RuntimeMeshComponentSceneProxy_GetDynamicRayTracingInstances, STATGROUP_RuntimeMesh);
 
 #define RMC_LOG_VERBOSE(Format, ...) \
-	UE_LOG(RuntimeMeshLog2, Verbose, TEXT("[RMCSP:%d Mesh:%d Thread:%d]: " Format), GetUniqueID(), (RuntimeMeshProxy? RuntimeMeshProxy->GetMeshID() : -1), FPlatformTLS::GetCurrentThreadId(), __VA_ARGS__);
+	UE_LOG(RuntimeMeshLog2, Verbose, TEXT("[RMCSP:%d Mesh:%d Thread:%d]: " Format), GetUniqueID(), (RuntimeMeshProxy? RuntimeMeshProxy->GetMeshID() : -1), FPlatformTLS::GetCurrentThreadId());
 
 FRuntimeMeshComponentSceneProxy::FRuntimeMeshComponentSceneProxy(URuntimeMeshComponent* Component) 
 	: FPrimitiveSceneProxy(Component)
